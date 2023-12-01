@@ -1,0 +1,29 @@
+.au-btn-search {
+    size: 100px;
+    position: relative;
+    right: 10px;
+    min-width: 85px;
+    color: #fff;
+    border: 1px solid #205b8d;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 100px;
+    background: #205b8d
+}
+
+.au-btn-search:hover {
+    background: #05143f
+}
+
+.au-btn-search>i {
+    font-size: 20px;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%)
+}

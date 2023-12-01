@@ -1,0 +1,86 @@
+<Body background="assets/images/EquiryBackground.png">
+
+    <div class="container">
+        <div class="main-content page-m">
+            <!-- <div class="container-fluid"> -->
+
+            <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()">
+
+                <!--visitor form group-->
+
+                <div formGroupName="visitor" style="color: aliceblue;">
+                    <div class="row g-5">
+                        <div class="col-md-5 offset-md-1">
+                            <h3 style="color: aliceblue;">College Details</h3>
+
+                            <div class="mb-3">
+                                <label class="form-label">College Name</label>
+                                <input type="text" class="form-control" formControlName="firstName"
+                                    style="height: 40px;" placeholder="Your First Name...">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Phone</label>
+                                <input type="text" class="form-control" formControlName="phone" style="height: 40px;"
+                                    placeholder="Your Last Name...">
+                                     <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger mt-1">
+
+                                        <div *ngIf="phone.errors['required'] || phone.errors['notOnlyWhiteSpace']">
+                                            Phone number is required
+                                        </div>
+    
+                                        <div *ngIf="phone.errors['minlength']">
+                                            Phone number must be atleast 10 Digits long
+                                        </div>
+
+                                     </div>
+                                    
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Email</label>
+                                <input type="text" class="form-control" formControlName="email" placeholder="Email..."
+                                    style="height: 40px;">
+                            </div>
+                        </div>
+
+                        <div class="col-md-5">
+
+                            <h3 style="color: aliceblue;">Address</h3>
+
+                            <div class="mb-3">
+                                <label class="form-label">City</label>
+                                <input type="text" class="form-control" formControlName="city" style="height: 40px;">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Country</label>
+                                <select formControlName="country" class="form-select" (change)="getStates('visitor')">
+                                    <option *ngFor="let tempCountries of countries" [ngValue]="tempCountries">
+                                        {{ tempCountries.name }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">State</label>
+                                <select formControlName="state" class="form-select">
+                                    <option *ngFor="let tempStates of addressStates" [ngValue]="tempStates">
+                                        {{ tempStates.name }}
+                                    </option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <!--submit button-->
+                        <div class="send-btn">
+                            <button type="submit" class="btn btn-primary">Send</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</Body>

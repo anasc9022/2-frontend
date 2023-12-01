@@ -1,0 +1,90 @@
+<div class="carousel-content">
+    <!-- <div class="container-fluid"> -->
+         <!-- <div class="row"> -->
+
+        <!-- carousel -->
+        <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a routerLink="/industries/11">
+                        <img src="assets/images/industry/carousel1.png" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color: rgb(236, 233, 233);">Sadbhav Engineering</h5>
+                        <p>Sadbhav Engineering today is considered among the few elite infrastructure companies in the
+                            country.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a routerLink="/industries/6">
+                        <img src="assets/images/industry/carousel2.png" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5 style="color: rgb(236, 233, 233);">Finolex Cables Ltd.</h5>
+                        <p>Finolex Cables is the market leader in Electrical wires.</p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <a routerLink="/industries/10">
+                        <img src="assets/images/industry/carousel3.png" class="d-block w-100" alt="...">
+                    </a>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Aurobindo</h5>
+                        <p>Aurobindo Pharma features among the top 2 companies in India in terms of consolidated
+                            revenues.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        
+
+        <!-- End carousel -->
+
+        <!--loop over the collection of industries-->
+
+        <div class="row row-cols-1 row-cols-md-4 g-2"
+            style="padding-left: 40px; padding-right: 40px; padding-top: 15px;">
+            <div class="col" *ngFor="let tempIndustry of industries" class="col-md-4">
+                <div class="card h-100">
+                    <div>
+                        <a routerLink="/industries/{{ tempIndustry.id }}">
+                            <img src="{{ tempIndustry.imageUrl }}" class="img-responsive">
+                        </a>
+                    </div>
+                    
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a routerLink="/industries/{{ tempIndustry.id }}">
+                                {{ tempIndustry.name }}
+                            </a>
+                            
+                        </h5>
+                    </div>
+                </div>
+            </div>
+
+            <!--if industry not found then show error message-->
+            <div *ngIf="industries?.length == 0" class="alert alert-warning col-md-12" role="alert">
+                No Industries found
+            </div>
+        </div>
+
+</div>

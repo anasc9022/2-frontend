@@ -1,0 +1,28 @@
+<div class="dropdown">
+
+    <button class="dropbtn me-3"><b>INDUSTRIAL CATEGORY</b>
+        <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+
+        <div *ngFor="let tempIndustrialCategory of industrialCategories">
+            <li><a class="dropdown-item" routerLink="/category/{{ tempIndustrialCategory.id }}">
+                    {{ tempIndustrialCategory.categoryName }}
+                </a></li>
+        </div>
+
+    </div>
+</div>
+<!-- 
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Industrial Category
+    </a>
+    <ul class="dropdown-menu">
+        <div *ngFor="let tempIndustrialCategory of industrialCategories">
+            <li><a class="dropdown-item" routerLink="/category/{{ tempIndustrialCategory.id }}">
+                    {{ tempIndustrialCategory.categoryName }}
+                </a></li>
+        </div>
+    </ul>
+</li> -->

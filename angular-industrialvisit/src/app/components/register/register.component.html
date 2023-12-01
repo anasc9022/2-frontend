@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="main-content page-m">
+
+    <form [formGroup]="checkoutFormGroup" (ngSubmit)="onSubmit()" style="border:2px solid #ccc">
+
+      <!--register form group-->
+      <div class="container" formGroupName="register">
+        <h3>Sign Up</h3>
+        <p>Please fill college details in this form.</p>
+
+        <label><b>College Name</b></label>
+        <input type="text" formControlName="collegeName" placeholder="College name..">
+
+        <label><b>Email</b></label>
+        <input type="text" formControlName="email" placeholder="College Email...">
+
+        <label><b>Password</b></label>
+        <input type="password" formControlName="password" placeholder="Password you want to set...">
+
+        <div class="clearfix">
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

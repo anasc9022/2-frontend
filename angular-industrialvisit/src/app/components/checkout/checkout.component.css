@@ -1,0 +1,16 @@
+.main-content.page-m {
+    padding: 5% 0 !important
+}
+
+.container {
+    padding-top: 50px;
+    min-height: 100vh
+}
+
+.send-btn {
+    padding-left: 120px;
+}
+
+.btn {
+    width: 150px;
+}
